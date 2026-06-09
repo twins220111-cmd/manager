@@ -43,7 +43,7 @@
     padding-bottom:72px;
   }
 
-  /* === HERO (모바일 iOS 철저 대응) === */
+  /* === HERO === */
   .hero{
     position:relative;
     height: 100vh;
@@ -197,14 +197,14 @@
     letter-spacing:0.2em;
     margin-bottom:10px;
   }
-  .kp-h{
+  .kp-card h3{
     font-size:18px;
     font-weight:600;
     color:var(--purple-deep);
     margin-bottom:10px;
     letter-spacing:-0.01em;
   }
-  .kp-p{
+  .kp-card p{
     font-size:13.5px;
     line-height:1.7;
     color:var(--gray-text);
@@ -360,19 +360,12 @@
     color:var(--white);
     border-color:var(--gold);
   }
-  
   .floor-view{
-    position: relative;
     background:var(--bg-cream);
     padding:16px;
     border:0.5px solid var(--gray-line);
-    min-height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  .floor-view img{width:100%;display:block;transition: opacity 0.2s ease;}
-
+  .floor-view img{width:100%;display:block}
   .floor-info{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -380,7 +373,6 @@
     background:var(--gray-line);
     margin-top:16px;
     border:0.5px solid var(--gray-line);
-    width: 100%;
   }
   .floor-info > div{
     background:var(--white);
@@ -397,116 +389,6 @@
     font-size:15px;
     font-weight:600;
     color:var(--purple-deep);
-  }
-
-  /* === REGISTER FORM === */
-  .register-sec {
-    background: var(--bg-soft);
-    padding: 72px 24px;
-  }
-  .reg-box {
-    background: var(--white);
-    padding: 32px 24px;
-    border: 0.5px solid var(--gray-line);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(45,27,78,0.04);
-  }
-  .form-group {
-    margin-bottom: 20px;
-  }
-  .form-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-  }
-  .form-control {
-    width: 100%;
-    height: 48px;
-    padding: 0 16px;
-    border: 1px solid #E2E8F0;
-    border-radius: 6px;
-    font-size: 14px;
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .form-control:focus {
-    border-color: var(--gold);
-  }
-  .form-control::placeholder {
-    color: #A0AEC0;
-  }
-  .phone-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .phone-group select {
-    width: 30%;
-    background: var(--white);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A1424' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 14px;
-  }
-  .phone-group input {
-    width: 35%;
-    text-align: center;
-  }
-  .phone-sep {
-    color: #718096;
-    font-size: 14px;
-  }
-  .agree-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-    margin-top: 16px;
-    margin-bottom: 24px;
-  }
-  .agree-group input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--gold);
-    cursor: pointer;
-  }
-  .agree-group label {
-    font-size: 13.5px;
-    color: var(--gray-text);
-    cursor: pointer;
-    user-select: none;
-  }
-  .agree-group .view-link {
-    color: #4A5568;
-    text-decoration: underline;
-    font-size: 12px;
-    margin-left: 4px;
-    cursor: pointer;
-  }
-  .btn-submit {
-    width: 100%;
-    height: 52px;
-    background: var(--gold);
-    color: var(--white);
-    border: none;
-    border-radius: 26px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    letter-spacing: 0.05em;
-    box-shadow: 0 4px 12px rgba(201,169,97,0.3);
-  }
-  .btn-submit:active {
-    transform: scale(0.99);
-    background: var(--gold-dark);
   }
 
   /* === BENEFITS === */
@@ -673,6 +555,7 @@
 </head>
 <body>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -697,6 +580,7 @@
   <div class="scroll-cue">SCROLL</div>
 </section>
 
+<!-- KEY POINTS -->
 <section class="keypoints">
   <div class="reveal">
     <div class="sec-label">WHY HELIEUM</div>
@@ -708,27 +592,28 @@
   <div class="kp-grid">
     <div class="kp-card reveal">
       <div class="kp-num">01</div>
-      <div class="kp-h">즉시 입주 가능</div>
-      <div class="kp-p">기다림 없이 바로 입주할 수 있는 동탄 최중심 즉시입주 오피스텔. 회사보유분 대폭 할인 분양 진행 중.</div>
+      <h3>즉시 입주 가능</h3>
+      <p>기다림 없이 바로 입주할 수 있는 동탄 최중심 즉시입주 오피스텔. 회사보유분 대폭 할인 분양 진행 중.</p>
     </div>
     <div class="kp-card reveal">
       <div class="kp-num">02</div>
-      <div class="kp-h">청약통장 不要</div>
-      <div class="kp-p">만 19세 이상이면 누구나 청약 가능. 유주택자·다주택자 모두 자격 제한 없이 청약 가능합니다.</div>
+      <h3>청약통장 不要</h3>
+      <p>만 19세 이상이면 누구나 청약 가능. 유주택자·다주택자 모두 자격 제한 없이 청약 가능합니다.</p>
     </div>
     <div class="kp-card reveal">
       <div class="kp-num">03</div>
-      <div class="kp-h">쿼드러플 역세권</div>
-      <div class="kp-p">GTX-A · SRT · 인덕원동탄선 · 동탄트램이 모두 만나는 동탄역 초역세권 (차량 약 5분).</div>
+      <h3>쿼드러플 역세권</h3>
+      <p>GTX-A · SRT · 인덕원동탄선 · 동탄트램이 모두 만나는 동탄역 초역세권 (차량 약 5분).</p>
     </div>
     <div class="kp-card reveal">
       <div class="kp-num">04</div>
-      <div class="kp-h">아파트 대체상품</div>
-      <div class="kp-p">화성시 60㎡ 이하 아파트 공급률이 낮은 가운데, 희소성 높은 주거 대체 상품으로서의 가치.</div>
+      <h3>아파트 대체상품</h3>
+      <p>화성시 60㎡ 이하 아파트 공급률이 낮은 가운데, 희소성 높은 주거 대체 상품으로서의 가치.</p>
     </div>
   </div>
 </section>
 
+<!-- LOCATION -->
 <section class="location">
   <div class="reveal">
     <div class="sec-label">LOCATION</div>
@@ -753,6 +638,7 @@
   <p class="img-caption">동탄1·2신도시 최중심 위치</p>
 </section>
 
+<!-- FEATURES (PURPLE) -->
 <section class="features">
   <div class="reveal">
     <div class="sec-label">PREMIUM VALUE</div>
@@ -787,12 +673,13 @@
       <div class="feat-icon">榮</div>
       <div class="feat-text">
         <h4>생활 인프라 충족</h4>
-        <p>반경 500m 이내 이마트 트레이더스·경기교육도서관 건립 예정. 동탄역 헤리엇 파인즈몰 인접으로 쇼핑·문화·교육 인프라를 모두 갖추었습니다.</p>
+        <p>반경 500m 이내 이마트 트레이더스·경기교육도서관 건립 예정. 동탄역 헤리엇 파인즈몰 인접으로쇼핑·문화·교육 인프라를 모두 갖추었습니다.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TRANSIT -->
 <section class="transit">
   <div class="reveal">
     <div class="sec-label">TRANSPORTATION</div>
@@ -835,6 +722,7 @@
   <p class="img-caption">동탄역 복합환승센터 구상도</p>
 </section>
 
+<!-- FLOORPLAN -->
 <section class="floorplan">
   <div class="reveal">
     <div class="sec-label">UNIT TYPES</div>
@@ -861,7 +749,7 @@
   <div class="type-tabs" id="typeTabs"></div>
 
   <div class="floor-view">
-    <img id="floorImg" src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/4_PHASE%201_59A.jpg" alt="평면도">
+    <img id="floorImg" src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/4_PHASE%201_59A.jpg" alt="평면도" loading="lazy">
   </div>
   
   <div class="floor-info">
@@ -880,54 +768,7 @@
   </div>
 </section>
 
-<section class="register-sec" id="registerForm">
-  <div class="reveal">
-    <div class="sec-label">CUSTOMER REGISTRATION</div>
-    <div class="divider"></div>
-    <h2 class="sec-title">동탄역 헤리움 센트럴<br><span class="accent">관심고객 등록</span></h2>
-    <p class="sec-desc">등록해 주시면 분양가 안내, 잔여 호실 현황, 특별 혜택 정보를 우선적으로 안내해 드립니다.</p>
-  </div>
-
-  <div class="reg-box reveal">
-    <form id="customerForm" onsubmit="submitForm(event)">
-      <div class="form-group">
-        <label for="regName">이름</label>
-        <input type="text" id="regName" class="form-control" placeholder="이름을 입력해 주세요" required>
-      </div>
-      
-      <div class="form-group">
-        <label>연락처</label>
-        <div class="phone-group">
-          <select id="phone1" class="form-control">
-            <option value="010">010</option>
-            <option value="011">011</option>
-            <option value="016">016</option>
-            <option value="017">017</option>
-            <option value="019">019</option>
-          </select>
-          <span class="phone-sep">-</span>
-          <input type="tel" id="phone2" class="form-control" placeholder="연락처" maxlength="4" pattern="[0-9]{3,4}" required>
-          <span class="phone-sep">-</span>
-          <input type="tel" id="phone3" class="form-control" placeholder="연락처" maxlength="4" pattern="[0-9]{4}" required>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <label for="regAddress">거주지</label>
-        <input type="text" id="regAddress" class="form-control" placeholder="시/군/구 단위까지 입력해 주세요" required>
-      </div>
-      
-      <div class="agree-group">
-        <input type="checkbox" id="regAgree" required>
-        <label for="regAgree">개인정보 수집·이용 동의</label>
-        <span class="view-link" onclick="alert('본 개인정보 수집 및 이용은 동탄역 헤리움 센트럴 오피스텔 안내 및 상담 목적으로만 이용되며 관련 법령에 의거 철저히 보호됩니다.')">[보기]</span>
-      </div>
-      
-      <button type="submit" class="btn-submit">신청하기</button>
-    </form>
-  </div>
-</section>
-
+<!-- BENEFITS -->
 <section class="benefits">
   <div class="reveal">
     <div class="sec-label">SPECIAL TERMS</div>
@@ -964,6 +805,7 @@
   </div>
 </section>
 
+<!-- MARKET -->
 <section class="market">
   <div class="reveal">
     <div class="sec-label">MARKET INSIGHT</div>
@@ -983,6 +825,7 @@
   <p class="img-caption">화성시 오피스텔 평형대 분석 — 주거형 공급 희소</p>
 </section>
 
+<!-- CTA FINAL -->
 <section class="cta-final">
   <div class="divider"></div>
   <h2>지금 바로 <span class="g">문의주세요</span><br>전문 상담사가 안내해드립니다</h2>
@@ -994,6 +837,7 @@
   <div class="cta-hours">상담시간 · 매일 09:00 ~ 19:00</div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="ft-logo">DONGTAN HELIEUM CENTRAL</div>
   <div>동탄2신도시 일반상업용지 · 지하4층 ~ 지상10층 · 3개동 · 총 450실</div>
@@ -1004,12 +848,13 @@
   </div>
 </footer>
 
+<!-- FIXED BOTTOM BAR -->
 <div class="fixed-bar">
   <a href="tel:1811-1357" class="fb-btn fb-call">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
     전화문의
   </a>
-  <a href="#cta" onclick="document.querySelector('.register-sec').scrollIntoView({behavior:'smooth'});return false;" class="fb-btn fb-kakao">
+  <a href="https://naver.me/FiPsdIdU" target="_blank" class="fb-btn fb-kakao">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.9-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.7.1 1.4.2 2 .2 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>
     상담신청
   </a>
@@ -1069,31 +914,17 @@
   });
   renderTypes(1);
 
-  // 관심고객 신청 폼 연동 처리
-  function submitForm(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('regName').value;
-    const p1 = document.getElementById('phone1').value;
-    const p2 = document.getElementById('phone2').value;
-    const p3 = document.getElementById('phone3').value;
-    const address = document.getElementById('regAddress').value;
-    const agree = document.getElementById('regAgree').checked;
-    
-    if(!name || !p2 || !p3 || !address) {
-      alert('모든 항목을 올바르게 입력해 주세요.');
-      return;
+  // 이미지 백그라운드 사전 다운로드(프리로드) 엔진
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof UNIT_DATA !== 'undefined' && typeof BASE !== 'undefined') {
+      Object.keys(UNIT_DATA).forEach(phase => {
+        UNIT_DATA[phase].forEach(u => {
+          const img = new Image();
+          img.src = BASE + u.img;
+        });
+      });
     }
-    
-    if(!agree) {
-      alert('개인정보 수집·이용에 동의해 주세요.');
-      return;
-    }
-    
-    const targetUrl = "https://naver.me/FiPsdIdU";
-    alert('관심고객 등록 신청이 확인되었습니다. 상세 정보 작성을 위해 신청 페이지로 안내해 드립니다.');
-    window.open(targetUrl, '_blank');
-  }
+  });
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries)=>{
