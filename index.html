@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>동탄역 헤리움 센트럴 | 동탄 최중심 즉시입주 오피스텔</title>
+<meta name="description" content="동탄2신도시 최중심, GTX-A·SRT·인덕원동탄선·트램 쿼드러플 역세권. 즉시입주 가능한 주거형 오피스텔.">
+<meta property="og:title" content="동탄역 헤리움 센트럴">
+<meta property="og:description" content="동탄1,2신도시 핵심입지 즉시입주 오피스텔 | 1811-1357">
+<meta property="og:image" content="https://raw.githubusercontent.com/twins220111-cmd/manager/main/1_PROJECT%20OVERVIEW.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  :root{
+    --purple-deep:#2D1B4E;
+    --purple-mid:#4A2C7A;
+    --purple-light:#6B4598;
+    --gold:#C9A961;
+    --gold-light:#E5CC8A;
+    --gold-dark:#A88847;
+    --ink:#1A1424;
+    --gray-text:#6B6478;
+    --gray-line:#E8E4ED;
+    --bg-cream:#FAF8F5;
+    --bg-soft:#F5F2EE;
+    --white:#FFFFFF;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    font-weight:400;
+    overflow-x:hidden;
+    padding-bottom:72px;
+  }
+
+  /* === HERO === */
+  .hero{
+    position:relative;
+    height:100vh;
+    min-height:600px;
+    max-height:900px;
+    width:100%;
+    overflow:hidden;
+    background:var(--purple-deep);
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background-image:url('https://raw.githubusercontent.com/twins220111-cmd/manager/main/1_PROJECT%20OVERVIEW.jpg');
+    background-size:cover;
+    background-position:center;
+    filter:brightness(0.55);
+  }
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(45,27,78,0.3) 0%,rgba(45,27,78,0.2) 40%,rgba(26,20,36,0.85) 100%);
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:0 24px 56px;
+    color:var(--white);
+  }
+  .hero-badge{
+    display:inline-block;
+    padding:6px 14px;
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    font-size:11px;
+    letter-spacing:0.2em;
+    font-weight:500;
+    margin-bottom:20px;
+    align-self:flex-start;
+    background:rgba(0,0,0,0.2);
+    backdrop-filter:blur(4px);
+  }
+  .hero-title{
+    font-family:'Noto Serif KR',serif;
+    font-size:38px;
+    font-weight:500;
+    line-height:1.25;
+    letter-spacing:-0.02em;
+    margin-bottom:16px;
+    text-shadow:0 2px 20px rgba(0,0,0,0.4);
+  }
+  .hero-title .gold{color:var(--gold-light)}
+  .hero-sub{
+    font-size:15px;
+    line-height:1.7;
+    color:rgba(255,255,255,0.85);
+    font-weight:300;
+    letter-spacing:0.01em;
+    margin-bottom:32px;
+  }
+  .hero-meta{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .hero-meta span{
+    font-size:11px;
+    padding:5px 11px;
+    background:rgba(201,169,97,0.15);
+    border:0.5px solid rgba(201,169,97,0.5);
+    color:var(--gold-light);
+    letter-spacing:0.05em;
+  }
+  .scroll-cue{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    color:var(--gold-light);
+    font-size:10px;
+    letter-spacing:0.3em;
+    z-index:3;
+    opacity:0.7;
+    animation:bounce 2s infinite;
+  }
+  @keyframes bounce{
+    0%,100%{transform:translateX(-50%) translateY(0)}
+    50%{transform:translateX(-50%) translateY(6px)}
+  }
+
+  /* === SECTION COMMON === */
+  section{padding:72px 24px;position:relative}
+  .sec-label{
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--gold-dark);
+    font-weight:600;
+    margin-bottom:14px;
+    text-transform:uppercase;
+  }
+  .sec-title{
+    font-family:'Noto Serif KR',serif;
+    font-size:26px;
+    font-weight:500;
+    line-height:1.35;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    margin-bottom:18px;
+  }
+  .sec-title .accent{color:var(--purple-mid)}
+  .sec-desc{
+    font-size:14.5px;
+    line-height:1.75;
+    color:var(--gray-text);
+    margin-bottom:36px;
+  }
+  .divider{
+    width:36px;
+    height:1px;
+    background:var(--gold);
+    margin-bottom:20px;
+  }
+
+  /* === KEY POINTS === */
+  .keypoints{background:var(--bg-cream)}
+  .kp-grid{display:flex;flex-direction:column;gap:20px}
+  .kp-card{
+    background:var(--white);
+    padding:28px 24px;
+    border:0.5px solid var(--gray-line);
+    position:relative;
+    transition:all 0.3s;
+  }
+  .kp-card::before{
+    content:'';
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:2px;
+    background:var(--gold);
+  }
+  .kp-num{
+    font-family:'Noto Serif KR',serif;
+    font-size:13px;
+    color:var(--gold-dark);
+    letter-spacing:0.2em;
+    margin-bottom:10px;
+  }
+  .kp-h{
+    font-size:18px;
+    font-weight:600;
+    color:var(--purple-deep);
+    margin-bottom:10px;
+    letter-spacing:-0.01em;
+  }
+  .kp-p{
+    font-size:13.5px;
+    line-height:1.7;
+    color:var(--gray-text);
+  }
+
+  /* === LOCATION === */
+  .location{background:var(--white)}
+  .img-frame{
+    width:100%;
+    margin:0 0 18px;
+    border:0.5px solid var(--gray-line);
+    overflow:hidden;
+    background:var(--bg-soft);
+  }
+  .img-frame img{width:100%;display:block;height:auto}
+  .img-caption{
+    font-size:12px;
+    color:var(--gray-text);
+    text-align:center;
+    margin-top:-6px;
+    margin-bottom:32px;
+    letter-spacing:0.05em;
+  }
+
+  /* === FEATURES PURPLE === */
+  .features{
+    background:var(--purple-deep);
+    color:var(--white);
+  }
+  .features .sec-label{color:var(--gold-light)}
+  .features .sec-title{color:var(--white)}
+  .features .sec-title .accent{color:var(--gold-light)}
+  .features .sec-desc{color:rgba(255,255,255,0.7)}
+  .features .divider{background:var(--gold-light)}
+  .feat-list{display:flex;flex-direction:column;gap:0}
+  .feat-row{
+    display:flex;
+    gap:18px;
+    padding:22px 0;
+    border-bottom:0.5px solid rgba(201,169,97,0.2);
+    align-items:flex-start;
+  }
+  .feat-row:last-child{border-bottom:none}
+  .feat-icon{
+    width:44px;height:44px;
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    font-family:'Noto Serif KR',serif;
+    font-size:16px;
+    font-weight:500;
+  }
+  .feat-text h4{
+    font-size:16px;
+    font-weight:600;
+    color:var(--gold-light);
+    margin-bottom:6px;
+    letter-spacing:-0.01em;
+  }
+  .feat-text p{
+    font-size:13.5px;
+    line-height:1.7;
+    color:rgba(255,255,255,0.75);
+    font-weight:300;
+  }
+
+  /* === TRANSIT === */
+  .transit{background:var(--bg-cream)}
+  .transit-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-bottom:32px;
+  }
+  .transit-card{
+    background:var(--white);
+    padding:20px 16px;
+    text-align:center;
+    border:0.5px solid var(--gray-line);
+  }
+  .transit-card .tag{
+    font-size:10px;
+    letter-spacing:0.2em;
+    color:var(--gold-dark);
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .transit-card .name{
+    font-size:15px;
+    font-weight:600;
+    color:var(--purple-deep);
+    margin-bottom:4px;
+  }
+  .transit-card .time{
+    font-size:12px;
+    color:var(--gray-text);
+    line-height:1.5;
+  }
+
+  /* === FLOORPLAN === */
+  .floorplan{background:var(--white)}
+  .phase-tabs{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-bottom:20px;
+  }
+  .phase-tab{
+    padding:14px 8px;
+    border:0.5px solid var(--gray-line);
+    background:var(--white);
+    font-size:13px;
+    font-weight:500;
+    color:var(--gray-text);
+    cursor:pointer;
+    transition:all 0.25s;
+    text-align:center;
+    letter-spacing:-0.01em;
+  }
+  .phase-tab.active{
+    background:var(--purple-deep);
+    color:var(--gold-light);
+    border-color:var(--purple-deep);
+  }
+  .phase-tab .ph-name{display:block;font-size:11px;color:inherit;opacity:0.7;margin-bottom:2px;letter-spacing:0.05em}
+  .phase-tab .ph-rooms{display:block;font-size:14px;font-weight:600}
+  .phase-tab.active .ph-name{opacity:0.9;color:var(--gold-light)}
+
+  .type-tabs{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+    margin-bottom:20px;
+    padding-bottom:6px;
+    scrollbar-width:none;
+  }
+  .type-tabs::-webkit-scrollbar{display:none}
+  .type-tab{
+    padding:10px 18px;
+    border:0.5px solid var(--gray-line);
+    background:var(--white);
+    font-size:13px;
+    font-weight:500;
+    color:var(--gray-text);
+    cursor:pointer;
+    white-space:nowrap;
+    transition:all 0.2s;
+    flex-shrink:0;
+  }
+  .type-tab.active{
+    background:var(--gold);
+    color:var(--white);
+    border-color:var(--gold);
+  }
+  .floor-view{
+    background:var(--bg-cream);
+    padding:16px;
+    border:0.5px solid var(--gray-line);
+  }
+  .floor-view img{width:100%;display:block}
+  .floor-info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--gray-line);
+    margin-top:16px;
+    border:0.5px solid var(--gray-line);
+  }
+  .floor-info > div{
+    background:var(--white);
+    padding:14px 8px;
+    text-align:center;
+  }
+  .fi-label{
+    font-size:10px;
+    color:var(--gray-text);
+    letter-spacing:0.1em;
+    margin-bottom:4px;
+  }
+  .fi-val{
+    font-size:15px;
+    font-weight:600;
+    color:var(--purple-deep);
+  }
+
+  /* === BENEFITS === */
+  .benefits{
+    background:linear-gradient(180deg,var(--bg-soft) 0%,var(--bg-cream) 100%);
+  }
+  .ben-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+  .ben-item{
+    background:var(--white);
+    padding:18px 14px;
+    text-align:center;
+    border:0.5px solid var(--gold-light);
+    position:relative;
+  }
+  .ben-item .b-label{
+    font-size:10px;
+    letter-spacing:0.15em;
+    color:var(--gold-dark);
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .ben-item .b-text{
+    font-size:14px;
+    font-weight:600;
+    color:var(--purple-deep);
+    line-height:1.4;
+    letter-spacing:-0.01em;
+  }
+
+  /* === MARKET === */
+  .market{background:var(--white)}
+  .market-img{
+    width:100%;
+    border:0.5px solid var(--gray-line);
+    margin-bottom:14px;
+  }
+  .market-img img{width:100%;display:block}
+
+  /* === CTA FINAL === */
+  .cta-final{
+    background:var(--purple-deep);
+    color:var(--white);
+    text-align:center;
+    padding:80px 24px;
+  }
+  .cta-final .divider{margin:0 auto 24px;background:var(--gold-light)}
+  .cta-final h2{
+    font-family:'Noto Serif KR',serif;
+    font-size:24px;
+    font-weight:500;
+    line-height:1.45;
+    margin-bottom:16px;
+    color:var(--white);
+  }
+  .cta-final h2 .g{color:var(--gold-light)}
+  .cta-final p{
+    font-size:14px;
+    color:rgba(255,255,255,0.75);
+    margin-bottom:32px;
+    font-weight:300;
+    line-height:1.7;
+  }
+  .cta-phone{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    padding:24px 48px;
+    background:var(--gold);
+    color:var(--purple-deep);
+    text-decoration:none;
+    font-weight:600;
+    border:1px solid var(--gold);
+    transition:all 0.2s;
+  }
+  .cta-phone:active{transform:scale(0.98)}
+  .cta-phone .pl{
+    font-size:11px;
+    letter-spacing:0.25em;
+    margin-bottom:6px;
+    opacity:0.85;
+  }
+  .cta-phone .pn{
+    font-family:'Noto Serif KR',serif;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:0.05em;
+  }
+  .cta-hours{
+    margin-top:20px;
+    font-size:11.5px;
+    color:rgba(255,255,255,0.55);
+    letter-spacing:0.05em;
+  }
+
+  /* === FOOTER === */
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,0.5);
+    padding:32px 24px 24px;
+    font-size:11px;
+    line-height:1.7;
+    text-align:center;
+  }
+  footer .ft-logo{
+    color:var(--gold-light);
+    font-family:'Noto Serif KR',serif;
+    font-size:14px;
+    letter-spacing:0.15em;
+    margin-bottom:12px;
+    font-weight:500;
+  }
+  footer .ft-note{font-size:10.5px;opacity:0.7;margin-top:10px;letter-spacing:0.02em}
+
+  /* === FIXED BOTTOM BAR === */
+  .fixed-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:var(--white);
+    border-top:0.5px solid var(--gray-line);
+    box-shadow:0 -2px 16px rgba(45,27,78,0.08);
+    z-index:100;
+    height:64px;
+  }
+  .fb-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    gap:8px;
+    letter-spacing:-0.01em;
+    transition:opacity 0.2s;
+  }
+  .fb-btn:active{opacity:0.85}
+  .fb-call{
+    background:var(--purple-deep);
+    color:var(--gold-light);
+  }
+  .fb-kakao{
+    background:var(--gold);
+    color:var(--purple-deep);
+  }
+  .fb-btn svg{width:18px;height:18px}
+
+  /* === DESKTOP === */
+  @media(min-width:768px){
+    body{max-width:480px;margin:0 auto;box-shadow:0 0 60px rgba(45,27,78,0.08)}
+    .hero{max-height:780px}
+  }
+  @media(min-width:1024px){
+    body{max-width:520px}
+  }
+
+  /* === REVEAL === */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s,transform 0.8s}
+  .reveal.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-badge">DONGTAN HELIEUM CENTRAL</span>
+    <h1 class="hero-title">
+      동탄 최중심<br>
+      <span class="gold">마지막 즉시입주</span><br>
+      주거형 오피스텔
+    </h1>
+    <p class="hero-sub">
+      동탄1·2신도시 핵심입지 · 지하4층 ~ 지상10층 · 3개동 · 총 450실<br>
+      아파트 대체상품으로서의 희소가치
+    </p>
+    <div class="hero-meta">
+      <span>GTX-A</span>
+      <span>SRT</span>
+      <span>인덕원동탄선</span>
+      <span>동탄트램</span>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</section>
+
+<!-- KEY POINTS -->
+<section class="keypoints">
+  <div class="reveal">
+    <div class="sec-label">WHY HELIEUM</div>
+    <div class="divider"></div>
+    <h2 class="sec-title">동탄의 마지막 기회,<br><span class="accent">이유 있는 선택</span></h2>
+    <p class="sec-desc">규제에서 자유롭고, 청약통장이 필요 없으며, 즉시 입주가 가능한 동탄 최중심 주거형 오피스텔입니다.</p>
+  </div>
+
+  <div class="kp-grid">
+    <div class="kp-card reveal">
+      <div class="kp-num">01</div>
+      <div class="kp-h">즉시 입주 가능</div>
+      <div class="kp-p">기다림 없이 바로 입주할 수 있는 동탄 최중심 즉시입주 오피스텔. 회사보유분 대폭 할인 분양 진행 중.</div>
+    </div>
+    <div class="kp-card reveal">
+      <div class="kp-num">02</div>
+      <div class="kp-h">청약통장 不要</div>
+      <div class="kp-p">만 19세 이상이면 누구나 청약 가능. 유주택자·다주택자 모두 자격 제한 없이 청약 가능합니다.</div>
+    </div>
+    <div class="kp-card reveal">
+      <div class="kp-num">03</div>
+      <div class="kp-h">쿼드러플 역세권</div>
+      <div class="kp-p">GTX-A · SRT · 인덕원동탄선 · 동탄트램이 모두 만나는 동탄역 초역세권 (차량 약 5분).</div>
+    </div>
+    <div class="kp-card reveal">
+      <div class="kp-num">04</div>
+      <div class="kp-h">아파트 대체상품</div>
+      <div class="kp-p">화성시 60㎡ 이하 아파트 공급률이 낮은 가운데, 희소성 높은 주거 대체 상품으로서의 가치.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location">
+  <div class="reveal">
+    <div class="sec-label">LOCATION</div>
+    <div class="divider"></div>
+    <h2 class="sec-title">동탄 1·2신도시<br><span class="accent">최중심 입지</span></h2>
+    <p class="sec-desc">동탄2신도시 일반상업용지에 위치하며, 동탄대로변에 자리잡아 차량 직진입 접근성이 우수합니다.</p>
+  </div>
+
+  <div class="img-frame reveal">
+    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/15_BIRD%27S-EYE%20VIEW.png" alt="동탄역 헤리움 센트럴 조감도" loading="lazy">
+  </div>
+  <p class="img-caption">광역 조감도 — 동탄역·삼성반도체·리베라CC 인접</p>
+
+  <div class="img-frame reveal">
+    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/3_SITE%20PLAN.jpg" alt="단지 배치도" loading="lazy">
+  </div>
+  <p class="img-caption">단지 배치도</p>
+
+  <div class="img-frame reveal">
+    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/14_DONGTAN%202%20NEW%20TOWN.jpg" alt="동탄2신도시 위치" loading="lazy">
+  </div>
+  <p class="img-caption">동탄1·2신도시 최중심 위치</p>
+</section>
+
+<!-- FEATURES (PURPLE) -->
+<section class="features">
+  <div class="reveal">
+    <div class="sec-label">PREMIUM VALUE</div>
+    <div class="divider"></div>
+    <h2 class="sec-title">동탄역 헤리움 센트럴이<br><span class="accent">선택받는 이유</span></h2>
+    <p class="sec-desc">미래 가치와 현재의 편익을 동시에 누리는 동탄의 핵심 자산.</p>
+  </div>
+
+  <div class="feat-list">
+    <div class="feat-row reveal">
+      <div class="feat-icon">交</div>
+      <div class="feat-text">
+        <h4>광역 교통의 중심</h4>
+        <p>GTX-A · SRT · 인덕원동탄선 · 트램이 만나는 동탄역. 삼성역까지 약 19분, 수서까지 약 17분의 강남 생활권을 실현합니다.</p>
+      </div>
+    </div>
+    <div class="feat-row reveal">
+      <div class="feat-icon">職</div>
+      <div class="feat-text">
+        <h4>직주근접 임대 수요</h4>
+        <p>삼성 Nano City 화성캠퍼스·기흥캠퍼스 및 동탄테크노밸리 인접. 동탄 내 약 15만 명의 기업체 상주인구로 안정적 임대 수요를 기대할 수 있습니다.</p>
+      </div>
+    </div>
+    <div class="feat-row reveal">
+      <div class="feat-icon">町</div>
+      <div class="feat-text">
+        <h4>주거복합 타운 조성</h4>
+        <p>당 사업지(450실)와 동탄역헤리엇(아파트 428세대 + O.T 150실) 등 약 1,000세대 규모의 주상복합 타운이 형성될 예정입니다.</p>
+      </div>
+    </div>
+    <div class="feat-row reveal">
+      <div class="feat-icon">榮</div>
+      <div class="feat-text">
+        <h4>생활 인프라 충족</h4>
+        <p>반경 500m 이내 이마트 트레이더스·경기교육도서관 건립 예정. 동탄역 헤리엇 파인즈몰 인접으로 쇼핑·문화·교육 인프라를 모두 갖추었습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSIT -->
+<section class="transit">
+  <div class="reveal">
+    <div class="sec-label">TRANSPORTATION</div>
+    <div class="divider"></div>
+    <h2 class="sec-title">동탄역에서 닿는<br><span class="accent">전국 2시간 생활권</span></h2>
+    <p class="sec-desc">SRT 현 운행 중, GTX-A 개통 예정. 수도권을 넘어 전국이 가까워지는 교통 프리미엄.</p>
+  </div>
+
+  <div class="transit-grid">
+    <div class="transit-card reveal">
+      <div class="tag">GTX-A</div>
+      <div class="name">삼성역</div>
+      <div class="time">약 19분</div>
+    </div>
+    <div class="transit-card reveal">
+      <div class="tag">SRT</div>
+      <div class="name">수서역</div>
+      <div class="time">약 17분</div>
+    </div>
+    <div class="transit-card reveal">
+      <div class="tag">고속도로</div>
+      <div class="name">경부·제2외곽</div>
+      <div class="time">동탄JC 약 1.5km</div>
+    </div>
+    <div class="transit-card reveal">
+      <div class="tag">트램</div>
+      <div class="name">동탄도시철도</div>
+      <div class="time">2027년 개통 예정</div>
+    </div>
+  </div>
+
+  <div class="img-frame reveal">
+    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/17_DONGTAN%20STATION%20RAIL%20NETWORK%20DEVELOPMENT%20PLAN.png" alt="광역 철도망" loading="lazy">
+  </div>
+  <p class="img-caption">동탄역 광역철도망</p>
+
+  <div class="img-frame reveal">
+    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/16_METROPOLITAN%20BUSINESS%20COMPLEX.png" alt="광역 비즈니스 콤플렉스" loading="lazy">
+  </div>
+  <p class="img-caption">동탄역 복합환승센터 구상도</p>
+</section>
+
+<!-- FLOORPLAN -->
+<section class="floorplan">
+  <div class="reveal">
+    <div class="sec-label">UNIT TYPES</div>
+    <div class="divider"></div>
+    <h2 class="sec-title">차수별 · 타입별<br><span class="accent">주거 평면도</span></h2>
+    <p class="sec-desc">1·2·3차 총 450실 중 라이프스타일에 맞는 타입을 선택하세요.</p>
+  </div>
+
+  <div class="phase-tabs">
+    <div class="phase-tab active" data-phase="1">
+      <span class="ph-name">1차</span>
+      <span class="ph-rooms">144실</span>
+    </div>
+    <div class="phase-tab" data-phase="2">
+      <span class="ph-name">2차</span>
+      <span class="ph-rooms">144실</span>
+    </div>
+    <div class="phase-tab" data-phase="3">
+      <span class="ph-name">3차</span>
+      <span class="ph-rooms">162실</span>
+    </div>
+  </div>
+
+  <div class="type-tabs" id="typeTabs"></div>
+
+  <div class="floor-view">
+    <img id="floorImg" src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/4_PHASE%201_59A.jpg" alt="평면도" loading="lazy">
+    <div class="floor-info">
+      <div>
+        <div class="fi-label">타입</div>
+        <div class="fi-val" id="fiType">59A</div>
+      </div>
+      <div>
+        <div class="fi-label">전용면적</div>
+        <div class="fi-val" id="fiArea">18.03평</div>
+      </div>
+      <div>
+        <div class="fi-label">공급호실</div>
+        <div class="fi-val" id="fiRooms">72실</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="reveal">
+    <div class="sec-label">SPECIAL TERMS</div>
+    <div class="divider"></div>
+    <h2 class="sec-title">파격 조건,<br><span class="accent">지금이 기회입니다</span></h2>
+    <p class="sec-desc">회사보유분 한정. 마감 시 조건이 변경될 수 있으며, 자세한 사항은 분양상담을 통해 안내드립니다.</p>
+  </div>
+
+  <div class="ben-grid">
+    <div class="ben-item reveal">
+      <div class="b-label">CONTRACT</div>
+      <div class="b-text">계약금 10%</div>
+    </div>
+    <div class="ben-item reveal">
+      <div class="b-label">DEPOSIT</div>
+      <div class="b-text">1천만원으로<br>동·호 지정</div>
+    </div>
+    <div class="ben-item reveal">
+      <div class="b-label">LOAN</div>
+      <div class="b-text">대출 최대<br>70% 가능</div>
+    </div>
+    <div class="ben-item reveal">
+      <div class="b-label">SUPPORT</div>
+      <div class="b-text">취득세<br>전액 지원</div>
+    </div>
+    <div class="ben-item reveal">
+      <div class="b-label">BONUS</div>
+      <div class="b-text">입주축하금<br>최대 지원</div>
+    </div>
+    <div class="ben-item reveal">
+      <div class="b-label">QUALIFY</div>
+      <div class="b-text">청약통장 不要<br>만19세 이상</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section class="market">
+  <div class="reveal">
+    <div class="sec-label">MARKET INSIGHT</div>
+    <div class="divider"></div>
+    <h2 class="sec-title">아파트 규제 강화,<br><span class="accent">대체 상품의 시대</span></h2>
+    <p class="sec-desc">정부의 주택 규제가 집중되며 주거형 오피스텔이 풍선효과로 주목받고 있습니다. 동탄신도시 內 주거형 오피스텔 공급은 희소합니다.</p>
+  </div>
+
+  <div class="market-img reveal">
+    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/18_RISING%20DEMAND%20FOR%20APARTMENT%20ALTERNATIVES.jpg" alt="아파트 대체상품 관심 증가" loading="lazy">
+  </div>
+  <p class="img-caption">아파트 규제 강화에 따른 주거형 오피스텔 선호도 증가</p>
+
+  <div class="market-img reveal">
+    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/19_COMPARISON%20OF%20RESIDENTIAL%20AND%20BUSINESS%20OFFICETELS.png" alt="화성시 오피스텔 평형대 분석" loading="lazy">
+  </div>
+  <p class="img-caption">화성시 오피스텔 평형대 분석 — 주거형 공급 희소</p>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="divider"></div>
+  <h2>지금 바로 <span class="g">문의주세요</span><br>전문 상담사가 안내해드립니다</h2>
+  <p>방문 상담 예약 · 잔여 호실 안내 · 자금 계획 컨설팅</p>
+  <a href="tel:1811-1357" class="cta-phone">
+    <span class="pl">CALL NOW</span>
+    <span class="pn">1811-1357</span>
+  </a>
+  <div class="cta-hours">상담시간 · 매일 09:00 ~ 19:00</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">DONGTAN HELIEUM CENTRAL</div>
+  <div>동탄2신도시 일반상업용지 · 지하4층 ~ 지상10층 · 3개동 · 총 450실</div>
+  <div style="margin-top:8px">대표문의 · 1811-1357</div>
+  <div class="ft-note">
+    ※ 본 자료는 소비자의 이해를 돕기 위해 제작된 홍보물로 일부는 계획 및 예정 된 사항이며,<br>
+    향후 변경될 수 있음을 알려드립니다. 정확한 내용은 분양신고 된 자료를 참조하시기 바랍니다.
+  </div>
+</footer>
+
+<!-- FIXED BOTTOM BAR -->
+<div class="fixed-bar">
+  <a href="tel:1811-1357" class="fb-btn fb-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+    전화문의
+  </a>
+  <a href="#cta" onclick="document.querySelector('.cta-final').scrollIntoView({behavior:'smooth'});return false;" class="fb-btn fb-kakao">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.7 6.9-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.7.1 1.4.2 2 .2 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg>
+    상담신청
+  </a>
+</div>
+
+<script>
+  // Unit data
+  const UNIT_DATA = {
+    1: [
+      {type:'59A', area:'18.03평', rooms:'72실', img:'4_PHASE%201_59A.jpg'},
+      {type:'59B', area:'17.97평', rooms:'63실', img:'5_PHASE%201_59B.jpg'},
+      {type:'62C', area:'18.90평', rooms:'9실',  img:'6_PHASE%201_62C.jpg'}
+    ],
+    2: [
+      {type:'59A', area:'18.13평', rooms:'90실', img:'7_PHASE%202_59A.jpg'},
+      {type:'63B', area:'19.29평', rooms:'27실', img:'8_PHASE%202_63B.jpg'},
+      {type:'69C', area:'21.01평', rooms:'18실', img:'9_PHASE%202_69C.jpg'},
+      {type:'63D', area:'19.06평', rooms:'9실',  img:'10_PHASE%202_63D.jpg'}
+    ],
+    3: [
+      {type:'59A', area:'18.13평', rooms:'72실', img:'11_PHASE%203_59A.jpg'},
+      {type:'64B', area:'19.48평', rooms:'54실', img:'12_PHASE%203_64B.jpg'},
+      {type:'72C', area:'21.98평', rooms:'36실', img:'13_PHASE%203_72C.jpg'}
+    ]
+  };
+  const BASE = 'https://raw.githubusercontent.com/twins220111-cmd/manager/main/';
+
+  function renderTypes(phase){
+    const wrap = document.getElementById('typeTabs');
+    wrap.innerHTML = '';
+    UNIT_DATA[phase].forEach((u,i)=>{
+      const el = document.createElement('div');
+      el.className = 'type-tab' + (i===0?' active':'');
+      el.textContent = u.type + ' (' + u.area + ')';
+      el.onclick = ()=> selectType(phase, i);
+      wrap.appendChild(el);
+    });
+    selectType(phase, 0);
+  }
+  function selectType(phase, idx){
+    document.querySelectorAll('.type-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+    const u = UNIT_DATA[phase][idx];
+    document.getElementById('floorImg').src = BASE + u.img;
+    document.getElementById('fiType').textContent = u.type;
+    document.getElementById('fiArea').textContent = u.area;
+    document.getElementById('fiRooms').textContent = u.rooms;
+  }
+  document.querySelectorAll('.phase-tab').forEach(tab=>{
+    tab.onclick = ()=>{
+      document.querySelectorAll('.phase-tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      renderTypes(tab.dataset.phase);
+    };
+  });
+  renderTypes(1);
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
