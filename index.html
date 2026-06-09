@@ -46,19 +46,24 @@
   /* === HERO === */
   .hero{
     position:relative;
-    height:100vh;
-    min-height:600px;
-    max-height:900px;
+    height: 100vh;
+    height: -webkit-fill-available;
+    min-height: 560px;
+    max-height: 950px;
     width:100%;
     overflow:hidden;
-    background:var(--purple-deep);
+    background:var(--purple-deep, #1a1423);
   }
   .hero-bg{
-    position:absolute;inset:0;
+    position:absolute;
+    inset:0;
     background-image:url('https://raw.githubusercontent.com/twins220111-cmd/manager/main/21.JPG');
     background-size:cover;
-    background-position:center;
+    background-position: center center;
+    background-repeat: no-repeat;
     filter:brightness(0.55);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
   }
   .hero-overlay{
     position:absolute;inset:0;
@@ -539,7 +544,16 @@
   /* === DESKTOP === */
   @media(min-width:768px){
     body{max-width:480px;margin:0 auto;box-shadow:0 0 60px rgba(45,27,78,0.08)}
-    .hero{max-height:780px}
+    .hero{
+    position:relative;
+    height: 100vh;
+    height: -webkit-fill-available;
+    min-height: 560px;
+    max-height: 950px;
+    width:100%;
+    overflow:hidden;
+    background:var(--purple-deep, #1a1423);
+  }
   }
   @media(min-width:1024px){
     body{max-width:520px}
@@ -549,64 +563,62 @@
   .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s,transform 0.8s}
   .reveal.in{opacity:1;transform:translateY(0)}
 
-  /* LOADING OVERLAY */
-  .loading-overlay{
-    position:fixed;inset:0;
-    background:var(--purple-deep);
-    z-index:9999;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    transition:opacity 0.6s;
-    padding:32px;
-    text-align:center;
+  
+  
+
+  /* 평면도 박스에 로딩 효과를 주기 위한 설정 */
+  .floor-view {
+    position: relative;
+    min-height: 300px; /* 이미지 로딩 전 들쭉날쭉함 방지 */
   }
-  .loading-overlay.fade-out{opacity:0;pointer-events:none}
-  .loading-logo{
-    font-family:'Noto Serif KR',serif;
-    font-size:18px;
-    color:var(--gold-light);
-    letter-spacing:0.2em;
-    margin-bottom:28px;
-    font-weight:500;
+  /* 이미지 로딩 스피너 */
+  .floor-view::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 30px; height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 2px solid var(--gray-line);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    z-index: 10;
   }
-  .loading-spinner{
-    width:36px;height:36px;
-    border:2px solid rgba(201,169,97,0.2);
-    border-top-color:var(--gold-light);
-    border-radius:50%;
-    animation:spin 1s linear infinite;
-    margin-bottom:28px;
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .loading-msg{
-    font-size:13.5px;
-    color:rgba(255,255,255,0.7);
-    line-height:1.8;
-    font-weight:300;
-    letter-spacing:0.01em;
+  /* 로딩 중일 때 스피너 보이기 */
+  .floor-view.img-loading::after {
+    opacity: 1;
   }
-  .loading-msg strong{
-    color:var(--gold-light);
-    font-weight:500;
+  .floor-view.img-loading img {
+    opacity: 0.3; /* 로딩 중엔 이미지를 살짝 흐리게 */
   }
+  #floorImg {
+    transition: opacity 0.2s;
+  }
+
+
+  
+  #floorImg {
+    transition: opacity 0.2s ease;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+  
+
 </style>
 </head>
 <body>
 
-<!-- LOADING OVERLAY -->
-<div class="loading-overlay" id="loadingOverlay">
-  <div class="loading-logo">HELIEUM CENTRAL</div>
-  <div class="loading-spinner"></div>
-  <div class="loading-msg">
-    고화질 이미지로 구성된 페이지입니다.<br>
-    잠시만 기다려주세요.<br><br>
-    <strong>두 손가락으로 확대하여<br>상세히 보실 수 있습니다.</strong>
-  </div>
-</div>
-
-<!-- HERO -->
+  <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -967,12 +979,20 @@
   },{threshold:0.1});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Loading overlay dismiss
-  setTimeout(()=>{
-    const ov = document.getElementById('loadingOverlay');
-    ov.classList.add('fade-out');
-    setTimeout(()=>ov.remove(), 600);
-  }, 3000);
+  
+
+  // 평면도 이미지 백그라운드 사전 다운로드(프리로드) 엔진
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof UNIT_DATA !== 'undefined' && typeof BASE !== 'undefined') {
+      Object.keys(UNIT_DATA).forEach(phase => {
+        UNIT_DATA[phase].forEach(u => {
+          const img = new Image();
+          img.src = BASE + u.img;
+        });
+      });
+    }
+  });
+
 </script>
 
 </body>
