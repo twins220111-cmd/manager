@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>동탄역 헤리움 센트럴 | 동탄 최중심 즉시입주 오피스텔</title>
 <meta name="description" content="동탄2신도시 최중심, GTX-A·SRT·인덕원동탄선·트램 쿼드러플 역세권. 즉시입주 가능한 주거형 오피스텔.">
 <meta property="og:title" content="동탄역 헤리움 센트럴">
@@ -548,9 +548,63 @@
   /* === REVEAL === */
   .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s,transform 0.8s}
   .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* LOADING OVERLAY */
+  .loading-overlay{
+    position:fixed;inset:0;
+    background:var(--purple-deep);
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition:opacity 0.6s;
+    padding:32px;
+    text-align:center;
+  }
+  .loading-overlay.fade-out{opacity:0;pointer-events:none}
+  .loading-logo{
+    font-family:'Noto Serif KR',serif;
+    font-size:18px;
+    color:var(--gold-light);
+    letter-spacing:0.2em;
+    margin-bottom:28px;
+    font-weight:500;
+  }
+  .loading-spinner{
+    width:36px;height:36px;
+    border:2px solid rgba(201,169,97,0.2);
+    border-top-color:var(--gold-light);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin-bottom:28px;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loading-msg{
+    font-size:13.5px;
+    color:rgba(255,255,255,0.7);
+    line-height:1.8;
+    font-weight:300;
+    letter-spacing:0.01em;
+  }
+  .loading-msg strong{
+    color:var(--gold-light);
+    font-weight:500;
+  }
 </style>
 </head>
 <body>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-logo">HELIEUM CENTRAL</div>
+  <div class="loading-spinner"></div>
+  <div class="loading-msg">
+    고화질 이미지로 구성된 페이지입니다.<br>
+    잠시만 기다려주세요.<br><br>
+    <strong>두 손가락으로 확대하여<br>상세히 보실 수 있습니다.</strong>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -912,6 +966,13 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
   },{threshold:0.1});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Loading overlay dismiss
+  setTimeout(()=>{
+    const ov = document.getElementById('loadingOverlay');
+    ov.classList.add('fade-out');
+    setTimeout(()=>ov.remove(), 600);
+  }, 3000);
 </script>
 
 </body>
