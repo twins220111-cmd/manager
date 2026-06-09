@@ -673,7 +673,7 @@
       <div class="feat-icon">榮</div>
       <div class="feat-text">
         <h4>생활 인프라 충족</h4>
-        <p>반경 500m 이내 이마트 트레이더스·경기교육도서관 건립 예정. 동탄역 헤리엇 파인즈몰 인접으로쇼핑·문화·교육 인프라를 모두 갖추었습니다.</p>
+        <p>반경 500m 이내 이마트 트레이더스·경기교육도서관 건립 예정. 동탄역 헤리엇 파인즈몰 인접으로 쇼핑·문화·교육 인프라를 모두 갖추었습니다.</p>
       </div>
     </div>
   </div>
@@ -750,20 +750,19 @@
 
   <div class="floor-view">
     <img id="floorImg" src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/4_PHASE%201_59A.jpg" alt="평면도" loading="lazy">
-  </div>
-  
-  <div class="floor-info">
-    <div>
-      <div class="fi-label">타입</div>
-      <div class="fi-val" id="fiType">59A</div>
-    </div>
-    <div>
-      <div class="fi-label">전용면적</div>
-      <div class="fi-val" id="fiArea">18.03평</div>
-    </div>
-    <div>
-      <div class="fi-label">공급호실</div>
-      <div class="fi-val" id="fiRooms">72실</div>
+    <div class="floor-info">
+      <div>
+        <div class="fi-label">타입</div>
+        <div class="fi-val" id="fiType">59A</div>
+      </div>
+      <div>
+        <div class="fi-label">전용면적</div>
+        <div class="fi-val" id="fiArea">18.03평</div>
+      </div>
+      <div>
+        <div class="fi-label">공급호실</div>
+        <div class="fi-val" id="fiRooms">72실</div>
+      </div>
     </div>
   </div>
 </section>
@@ -882,6 +881,24 @@
   };
   const BASE = 'https://raw.githubusercontent.com/twins220111-cmd/manager/main/';
 
+  // [개선] 페이지 접속 시 브라우저가 모든 평면도 이미지를 강제로 초고속 다운로드하게 만드는 프리로드 엔진
+  const preloadedImages = [];
+  function preloadAllImages() {
+    Object.keys(UNIT_DATA).forEach(phase => {
+      UNIT_DATA[phase].forEach(u => {
+        const img = new Image();
+        img.src = BASE + u.img;
+        preloadedImages.push(img); // 메모리 누수 방지 및 캐싱 유지
+      });
+    });
+  }
+  // DOM이 준비되자마자 즉시 사전 다운로드 실행
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', preloadAllImages);
+  } else {
+    preloadAllImages();
+  }
+
   function renderTypes(phase){
     const wrap = document.getElementById('typeTabs');
     if(!wrap) return;
@@ -913,18 +930,6 @@
     };
   });
   renderTypes(1);
-
-  // 이미지 백그라운드 사전 다운로드(프리로드) 엔진
-  window.addEventListener('DOMContentLoaded', () => {
-    if (typeof UNIT_DATA !== 'undefined' && typeof BASE !== 'undefined') {
-      Object.keys(UNIT_DATA).forEach(phase => {
-        UNIT_DATA[phase].forEach(u => {
-          const img = new Image();
-          img.src = BASE + u.img;
-        });
-      });
-    }
-  });
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries)=>{
