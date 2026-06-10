@@ -7,7 +7,7 @@
 <meta name="description" content="동탄2신도시 최중심, GTX-A·SRT·인덕원동탄선·트램 쿼드러플 역세권. 즉시입주 가능한 주거형 오피스텔.">
 <meta property="og:title" content="동탄역 헤리움 센트럴">
 <meta property="og:description" content="동탄1,2신도시 핵심입지 즉시입주 오피스텔 | 1811-1357">
-<meta property="og:image" content="https://raw.githubusercontent.com/twins220111-cmd/manager/main/20.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/twins220111-cmd/manager/main/20.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
@@ -750,19 +750,20 @@
 
   <div class="floor-view">
     <img id="floorImg" src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/4_PHASE%201_59A.jpg" alt="평면도" loading="lazy">
-    <div class="floor-info">
-      <div>
-        <div class="fi-label">타입</div>
-        <div class="fi-val" id="fiType">59A</div>
-      </div>
-      <div>
-        <div class="fi-label">전용면적</div>
-        <div class="fi-val" id="fiArea">18.03평</div>
-      </div>
-      <div>
-        <div class="fi-label">공급호실</div>
-        <div class="fi-val" id="fiRooms">72실</div>
-      </div>
+  </div>
+  
+  <div class="floor-info">
+    <div>
+      <div class="fi-label">타입</div>
+      <div class="fi-val" id="fiType">59A</div>
+    </div>
+    <div>
+      <div class="fi-label">전용면적</div>
+      <div class="fi-val" id="fiArea">18.03평</div>
+    </div>
+    <div>
+      <div class="fi-label">공급호실</div>
+      <div class="fi-val" id="fiRooms">72실</div>
     </div>
   </div>
 </section>
@@ -814,7 +815,7 @@
   </div>
 
   <div class="market-img reveal">
-    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/18_RISING%20DEMAND%20FOR%20APARTMENT%20ALTERNATIVES.jpg" alt="아파트 대체상품 관심 증가" loading="lazy">
+    <img src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/18.png" alt="아파트 대체상품 관심 증가" loading="lazy">
   </div>
   <p class="img-caption">아파트 규제 강화에 따른 주거형 오피스텔 선호도 증가</p>
 
@@ -881,18 +882,18 @@
   };
   const BASE = 'https://raw.githubusercontent.com/twins220111-cmd/manager/main/';
 
-  // [개선] 페이지 접속 시 브라우저가 모든 평면도 이미지를 강제로 초고속 다운로드하게 만드는 프리로드 엔진
+  // 이미지 백그라운드 초고속 선행 로딩(프리로드) 엔진
   const preloadedImages = [];
   function preloadAllImages() {
     Object.keys(UNIT_DATA).forEach(phase => {
       UNIT_DATA[phase].forEach(u => {
         const img = new Image();
         img.src = BASE + u.img;
-        preloadedImages.push(img); // 메모리 누수 방지 및 캐싱 유지
+        preloadedImages.push(img);
       });
     });
   }
-  // DOM이 준비되자마자 즉시 사전 다운로드 실행
+  
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', preloadAllImages);
   } else {
