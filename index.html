@@ -504,7 +504,21 @@
     margin-bottom:12px;
     font-weight:500;
   }
-  footer .ft-note{font-size:10.5px;opacity:0.7;margin-top:10px;letter-spacing:0.02em}
+  footer .ft-company{
+    margin-top:18px;
+    padding-top:16px;
+    border-top:0.5px solid rgba(255,255,255,0.12);
+    font-size:11px;
+    line-height:1.9;
+    color:rgba(255,255,255,0.6);
+    letter-spacing:0.01em;
+  }
+  footer .ft-company .sep{
+    color:rgba(255,255,255,0.3);
+    margin:0 6px;
+  }
+  footer .ft-company a{color:inherit;text-decoration:none}
+  footer .ft-note{font-size:10.5px;opacity:0.7;margin-top:14px;letter-spacing:0.02em}
 
   /* === FIXED BOTTOM BAR === */
   .fixed-bar{
@@ -751,7 +765,7 @@
   <div class="floor-view">
     <img id="floorImg" src="https://raw.githubusercontent.com/twins220111-cmd/manager/main/4_PHASE%201_59A.jpg" alt="평면도" loading="lazy">
   </div>
-  
+
   <div class="floor-info">
     <div>
       <div class="fi-label">타입</div>
@@ -842,6 +856,11 @@
   <div class="ft-logo">DONGTAN HELIEUM CENTRAL</div>
   <div>동탄2신도시 일반상업용지 · 지하4층 ~ 지상10층 · 3개동 · 총 450실</div>
   <div style="margin-top:8px">대표문의 · 1811-1357</div>
+  <div class="ft-company">
+    <div>아트윈컴퍼니<span class="sep">|</span>서울시 종로구 대학로12길 49 세우아트센터 6층</div>
+    <div>대표번호 : <a href="tel:1811-1357">1811-1357</a><span class="sep">|</span>대표 : 김병남</div>
+    <div>사업자등록번호 : 153-45-00815</div>
+  </div>
   <div class="ft-note">
     ※ 본 자료는 소비자의 이해를 돕기 위해 제작된 홍보물로 일부는 계획 및 예정 된 사항이며,<br>
     향후 변경될 수 있음을 알려드립니다. 정확한 내용은 분양신고 된 자료를 참조하시기 바랍니다.
@@ -893,7 +912,7 @@
       });
     });
   }
-  
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', preloadAllImages);
   } else {
